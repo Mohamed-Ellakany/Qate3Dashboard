@@ -10,7 +10,7 @@
 
 ## Introduction
 
-The Boycott Dashboard Mobile App is a powerful tool designed to help users manage and monitor boycott activities. This app provides real-time data, visualizations, and insights to support users in making informed decisions about boycotts.
+The Boycott Dashboard for Mobile App is a powerful tool designed to help Manager To Add And Delete Products in every Section in Database .
 
 ## Features
 
