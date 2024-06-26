@@ -1,0 +1,44 @@
+﻿@model IEnumerable<SubCategoryViewModel>
+@{
+    ViewData["Title"] = "مقاطعة او بدائل";
+}
+
+<div class="container px-5 text-center">
+    <div class="row g-5 justify-content-center">
+        @foreach(var subcategory in Model)
+        {
+            if (subcategory.Title == "مقاطعة")
+            {
+                 <div class="col-md-6">
+                     <div class="card p-3 border-danger border-2">
+                         <a asp-controller="Products" asp-action="Index" asp-route-SubCategoryId="@subcategory.Id" asp-route-CategoryId="@ViewBag.CategoryId">
+                                <i class="fa-solid fa-circle-xmark text-danger fa-6x my-2"></i>
+                                <div class="card-body">
+                                    <h4 class="card-title text-danger my-2">قائمة @($"ال{subcategory.Title}")</h4>
+                                     <p class="card-text text-danger">الدخول الي قائمة @($"ال{subcategory.Title}")</p>
+                             </div>
+                        </a>
+                </div>
+                </div>
+
+            }
+            else
+            {
+                <div class="col-md-6">
+                    <div class="card p-3 border-success border-2">
+                        <a asp-controller="Products" asp-action="Index" asp-route-SubCategoryId="@subcategory.Id" asp-route-CategoryId="@ViewBag.CategoryId">
+                            <i class="fa-solid fa-circle-check green fa-6x my-2"></i>
+                            <div class="card-body">
+                                <h4 class="card-title green my-2">قائمة @($"ال{subcategory.Title}")</h4>
+                                <p class="card-text green">الدخول الي قائمة @($"ال{subcategory.Title}")</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            }
+
+        }
+
+    </div>
+</div>

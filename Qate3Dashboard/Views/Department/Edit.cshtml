@@ -1,0 +1,23 @@
+﻿@model DepartmentViewModel
+@{
+    ViewData["Title"] = "تعديل";
+}
+
+<h1>تعديل قسم رئيسي</h1>
+
+
+<div class="container  px-5">
+    <form class="row g-3" asp-action="Edit" asp-controller="Department" enctype="multipart/form-data">
+        <div asp-validation-summary="All" class="text danger"></div>
+
+        @* <input asp-for="Dept_ImageName"/> *@
+
+        <partial name="PartialViews/_CreateEditPartialView" />
+
+
+    </form>
+</div>
+
+@section ValidationScriptSection {
+    <partial name="_ValidationScriptsPartial" />
+}

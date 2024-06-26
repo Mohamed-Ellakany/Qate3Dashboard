@@ -1,0 +1,22 @@
+﻿
+@model ProductViewModel
+@{
+    ViewData["Title"] = "Create Product";
+}
+
+<h1>Create new Product</h1>
+
+
+<div class="container  px-5">
+    <form class="row g-3" asp-action="CreateProduct" asp-controller="Products" enctype="multipart/form-data">
+        
+
+        <partial name="PartialViews/_CreateEditPartialView" />
+
+
+    </form>
+</div>
+
+@section ValidationScriptSection {
+    <partial name="_ValidationScriptsPartial" />
+}

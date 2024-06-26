@@ -1,0 +1,58 @@
+﻿@model ProductViewModel
+
+@{
+    
+     var Categories = new SelectList(ViewBag.categories, "Id", "Cat_Title");
+    var Subcategories = new SelectList(ViewBag.Subcategories, "Id", "Title");
+}
+
+
+<div class="col-md-6">
+    <label asp-for="Prod_Title" class="form-label ms-2">اسم المنتج</label>
+    <input type="text" class="form-control" placeholder="Product"  asp-for="Prod_Title">
+    @if (ViewBag.error is not null)
+        {
+        <span asp-validation-for="Prod_Title" class="text-danger">@ViewBag.error</span>
+        }
+    else
+        {
+        <span asp-validation-for="Prod_Title" class="text-danger"></span>
+        }
+
+
+</div>
+<div class="col-md-6">
+    <label asp-for="Image" class="ms-2 form-label">الصوره</label>
+    <input class="form-control" asp-for="Image">
+    <span asp-validation-for="Image" class="text-danger"></span>
+</div>
+
+<div class="col-md-6">
+    <label asp-for="SubcategoryId" class="ms-2 form-label">مقاطعة او بدائل ؟</label>
+    <select class="form-control" asp-items="@Subcategories" asp-for="SubcategoryId">
+        <option disabled>----- Select Department -----</option>
+    </select>
+</div>
+
+<div class="col-md-6">
+    <label asp-for="categoryId" class="ms-2 form-label">اسم القسم الفرعي</label>
+    <select class="form-control" asp-items="@Categories" asp-for="categoryId">
+        <option disabled>----- Select Department -----</option>
+    </select>
+</div>
+
+
+<input type="submit" class="btn btn-primary" value="تاكيد" />
+@if (Model is null)
+{
+    <a asp-controller="Products" asp-action="Index" asp-route-SubCategoryId="@ViewBag.SubCatId" asp-route-CategoryId="@ViewBag.CatId" class="btn btn-secondary">الرجوع</a>
+}
+else
+{
+
+
+<a asp-controller="Products" asp-action="Index" asp-route-SubCategoryId="@Model.SubcategoryId"  asp-route-CategoryId="@Model.categoryId" class="btn btn-secondary">الرجوع</a>
+
+}
+@* <a asp-controller="Products" asp-action="Index" asp-route-SubCategoryId="SubcategoryId" asp-route-CategoryId="categoryId" class="btn btn-secondary">Cancel</a>
+ *@

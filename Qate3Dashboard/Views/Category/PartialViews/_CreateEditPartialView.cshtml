@@ -1,0 +1,43 @@
+﻿@model CategoriesViewModel
+
+@{
+    var Departments = new SelectList(ViewBag.departments, "Id", "Dept_Title");
+}
+
+<div class="col-md-6">
+    <label asp-for="Cat_Title" class="form-label ms-2">اسم القسم الفرعي</label>
+    <input type="text" class="form-control" placeholder="Category" id="Category" asp-for="Cat_Title">
+    @if (ViewBag.error is not null)
+    {
+        <span asp-validation-for="Cat_Title" class="text-danger">@ViewBag.error</span>
+    }
+    else
+    {
+        <span asp-validation-for="Cat_Title" class="text-danger"></span>
+    }
+    
+</div>
+<div class="col-md-6">
+    <label asp-for="Image" class="ms-2 form-label">الصوره</label>
+    <input class="form-control" asp-for="Image">
+    <span asp-validation-for="Image" class="text-danger"></span>
+</div>
+<div class="col-md-6">
+    <label asp-for="Dept_Id" class="ms-2 form-label">اسم القسم الرئيسي</label>
+    <select class="form-control" asp-items="@Departments" asp-for="Dept_Id">
+        <option disabled>----- Select Department -----</option>
+    </select>
+</div>
+
+<input type="submit" class="btn btn-primary" value="تاكيد" />
+
+@if(Model is null)
+{
+    <a asp-controller="Category" asp-action="Index" asp-route-DepartmentId="@ViewBag.DeptId" class="btn btn-secondary">الرجوع</a>
+
+}
+else
+{
+    <a asp-controller="Category" asp-action="Index" asp-route-DepartmentId="@Model.Dept_Id" class="btn btn-secondary">الرجوع</a>
+
+}

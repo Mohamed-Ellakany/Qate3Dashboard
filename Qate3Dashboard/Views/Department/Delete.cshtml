@@ -1,0 +1,31 @@
+﻿@model DepartmentViewModel
+@{
+    ViewData["Title"] = "الحذف";
+}
+
+<h1>هل انت متاكد ؟ </h1>
+<p class="text-danger">عند حذف القسم الرئيسي سوف تحذف جميع الاقسام الفرعية والمنتجات </p>
+
+
+<div class="container  px-5">
+    <form class="row g-3" asp-action="Delete" asp-controller="Department">
+        <div asp-validation-summary="All" class="text danger"></div>
+
+       <input asp-for="Dept_ImageName" hidden />
+
+<div class="col-md-6">
+    
+    <img src="~/Images/AppImages/Departments/@Model.Dept_ImageName"  />
+</div>
+
+<div class="col-md-6">
+    <label for="Department" class="form-label ms-2">اسم القسم</label>
+    <input type="text" class="form-control" placeholder="Department" id="Department" asp-for="Dept_Title" readonly>
+</div>
+
+    <input type="submit" class="btn btn-danger" value="حذف" />
+        <a asp-controller="Department" asp-action="index" class="btn btn-secondary">رجوع</a>
+
+
+    </form>
+</div>

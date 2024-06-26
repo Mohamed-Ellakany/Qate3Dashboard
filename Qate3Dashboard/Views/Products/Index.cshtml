@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ProductViewModel>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "المنتجات";
+}
+
+<center><h1>Products of Category @ViewBag.categoryName </h1></center>
+
+<div class="buttons container mb-3">
+    <div class="row  justify-content-md-start">
+
+     
+        <div class="col-md-4">
+            <a asp-controller="Department" asp-action="Index" class="btn btn-outline-danger bg-white backbtn  appColor "><i class="fa-solid fa-arrow-alt-circle-left textHover   "></i>  الرجوع الي الشاشة الرئيسية </a>
+
+        </div>
+
+        <div class="col-md-4  ">
+            <a asp-controller="Products" asp-action="CreateProduct" asp-route-CatId="@ViewBag.CatIdNow" asp-route-SubCatId="@ViewBag.SubCatNow" class="btn d-block">اضافة منتج</a>
+        </div>
+
+        
+        </div>
+
+    </div>
+
+</div>
+
+@if (Model.Count() > 0)
+{
+    <div class="Products mb-4">
+        <div class="container text-center">
+            <div class="row g-4">
+                @foreach (var product in Model)
+                {
+                    <div class="col-md-3  ">
+                        <div class="card d-block">
+                            <div >
+
+                                <img src="~/Images/AppImages/Departments/Categories/Products/@product.Prod_ImageName" class="card-img-top" alt="image" />
+                                <div class="card-body">
+
+                                    <h5 class="card-title appColor">@product.Prod_Title</h5>
+
+                                    <a asp-controller="Products" asp-action="Edit" asp-route-Id="@product.Id" class="btn btn-warning text-white w-100 my-2">تعديل</a>
+                                    <a asp-controller="Products" asp-action="Delete" asp-route-Id="@product.Id" class="btn btn-danger text-white w-100 my-2">حذف</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+}
+else
+{
+    <div class=" alert-warning alert">
+        <h2>لا يوجد منتجات :( </h2>
+
+    </div>
+}

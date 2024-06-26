@@ -1,0 +1,46 @@
+* {
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+    font-family: "Cairo", sans-serif;
+}
+
+.Qate3Logo {
+    width: 150px;
+}
+
+@media only screen and (max-width: 800px) {
+    .Qate3Logo {
+        width: 100px;
+    }
+}
+
+header {
+    background-color: #000;
+}
+
+.appColor {
+    color: #ce1025 !important;
+}
+
+.buttons a {
+    font-weight: 500 ;
+    color: #fff ;
+  background-color: #ce1025 
+}
+
+
+.green {
+    color: green !important;
+}
+
+a{
+    text-decoration : none;
+}
+
+.backbtn:hover {
+    background-color: #ce1025 !important;
+    color: white !important;
+}
+
+.textHover:hover{
+    color:white !important;
+}

@@ -1,0 +1,21 @@
+﻿@model CategoriesViewModel
+@{
+    ViewData["Title"] = "انشاء قسم فرعي جديد";
+}
+
+<h1>انشاء قسم فرعي جديد</h1>
+
+
+<div class="container  px-5">
+    <form class="row g-3" asp-action="CreateCategory" asp-controller="Category" enctype="multipart/form-data">
+        
+
+        <partial name="PartialViews/_CreateEditPartialView" />
+
+
+    </form>
+</div>
+
+@section ValidationScriptSection{
+    <partial name="_ValidationScriptsPartial"/>
+}
