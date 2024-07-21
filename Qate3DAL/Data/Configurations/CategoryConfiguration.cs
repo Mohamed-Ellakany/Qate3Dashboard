@@ -15,7 +15,8 @@ namespace Qate3DAL.Data.Configurations
         {
             builder.Property(E=>E.Cat_ImageName).HasColumnType("nvarchar(255)").IsRequired();
             builder.Property(E=>E.Cat_Title).HasColumnType("nvarchar(255)").IsRequired();
-           
+
+            builder.HasIndex(P => P.Cat_Title);
         }
     }
 }
