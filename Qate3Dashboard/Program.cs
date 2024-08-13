@@ -17,6 +17,8 @@ namespace Qate3Dashboard
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddControllers();
+
             builder.Services.AddDbContext<AppDbContext>(dbContextOptionsBuilder =>
             {
                 dbContextOptionsBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
@@ -66,6 +68,9 @@ namespace Qate3Dashboard
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Department}/{action=Index}/{id?}");
+
+
+            app.MapControllers();
 
             app.Run();
         }

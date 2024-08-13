@@ -12,11 +12,12 @@ namespace Qate3Dashboard.Extensions
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            services.AddAutoMapper(M=>M.AddProfile(new DepartmentProfile()));
-            services.AddAutoMapper(M=>M.AddProfile(new CategoryProfile()));
-            services.AddAutoMapper(M=>M.AddProfile(new SubCategoryProfile()));
-            services.AddAutoMapper(M=>M.AddProfile(new ProductProfile()));
-             
+            //services.AddAutoMapper(M=>M.AddProfile(new DepartmentProfile()));
+            //services.AddAutoMapper(M=>M.AddProfile(new CategoryProfile()));
+            //services.AddAutoMapper(M=>M.AddProfile(new SubCategoryProfile()));
+            //services.AddAutoMapper(M=>M.AddProfile(new ProductProfile()));
+
+            services.AddAutoMapper(typeof(mappingProfiles));
             return  services;
         }
 
