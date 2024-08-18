@@ -1,7 +1,7 @@
 ﻿@model CategoriesViewModel
 
 @{
-    var Departments = new SelectList(ViewBag.departments, "Id", "Dept_Title");
+    var Departments = new SelectList(ViewBag.departments, "Id", "Dept_Title", ViewBag.DeptId);
 }
 
 <div class="col-md-6">

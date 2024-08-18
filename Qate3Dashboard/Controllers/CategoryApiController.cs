@@ -43,7 +43,7 @@ namespace Qate3Dashboard.Controllers
 
 
                 var categories = (await _unitOfWork.Repository<Category>().GetAllAsync())
-                                    .Where(C => C.Dept_Id == DepartmentId);
+                                    .Where(C => C.Dept_Id == DepartmentId) ;
 
                
                

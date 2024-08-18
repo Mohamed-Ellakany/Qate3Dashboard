@@ -7,6 +7,15 @@
 <center><h1>Products of Category @ViewBag.categoryName </h1></center>
 
 <div class="buttons container mb-3">
+
+    <div class="row  justify-content-md-start mb-3">
+        <div class="col-md-4">
+
+        <a asp-controller="SubCategory" asp-action="Index" asp-route-CategoryId="@ViewBag.CatIdNow" class="btn btn-outline-danger bg-white backbtn  appColor "><i class="fa-solid fa-arrow-alt-circle-left textHover   "></i>  الرجوع الي الصفحة السابقة </a>
+
+        </div>
+    </div>
+
     <div class="row  justify-content-md-start">
 
      
@@ -42,8 +51,8 @@
 
                                     <h5 class="card-title appColor">@product.Prod_Title</h5>
 
-                                    <a asp-controller="Products" asp-action="Edit" asp-route-Id="@product.Id" class="btn btn-warning text-white w-100 my-2">تعديل</a>
-                                    <a asp-controller="Products" asp-action="Delete" asp-route-Id="@product.Id" class="btn btn-danger text-white w-100 my-2">حذف</a>
+                                    <a asp-controller="Products" asp-action="Edit" asp-route-Id="@product.Id" asp-route-CatId="@ViewBag.CatIdNow" class="btn btn-warning text-white w-100 my-2">تعديل</a>
+                                    <a asp-controller="Products" asp-action="Delete" asp-route-Id="@product.Id" asp-route-SubCatId="@ViewBag.SubCatNow" class="btn btn-danger text-white w-100 my-2">حذف</a>
                                 </div>
                             </div>
 

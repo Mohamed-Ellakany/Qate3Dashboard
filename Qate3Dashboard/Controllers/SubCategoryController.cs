@@ -19,7 +19,7 @@ namespace Qate3Dashboard.Controllers
             _mapper = mapper;
         }
 
-        public async Task<IActionResult> Index(int CategoryId)
+        public async Task<IActionResult> Index(int CategoryId  )
         {
             ViewBag.CategoryId = CategoryId;
 

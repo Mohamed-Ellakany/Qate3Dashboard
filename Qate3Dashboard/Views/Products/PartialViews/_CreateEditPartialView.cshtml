@@ -2,8 +2,8 @@
 
 @{
     
-     var Categories = new SelectList(ViewBag.categories, "Id", "Cat_Title");
-    var Subcategories = new SelectList(ViewBag.Subcategories, "Id", "Title");
+    var Categories = new SelectList(ViewBag.categories, "Id", "Cat_Title", ViewBag.CatId);
+    var Subcategories = new SelectList(ViewBag.Subcategories, "Id", "Title", ViewBag.SubCatId);
 }
 
 

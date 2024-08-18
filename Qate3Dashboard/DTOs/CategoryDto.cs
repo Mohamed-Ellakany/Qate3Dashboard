@@ -19,6 +19,7 @@ namespace Qate3Dashboard.DTOs
 
         public int Dept_Id { get; set; }
 
+        public string Dept_Name { get; set; }
 
     }
 }

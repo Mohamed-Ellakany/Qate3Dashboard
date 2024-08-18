@@ -33,7 +33,8 @@ namespace Qate3Dashboard.MappingProfiles
 
             CreateMap<Product, ProductDto>()
                 .ForMember(dest => dest.Prod_ImageName, opt => opt.MapFrom<ProductImageResolver>())
-
+                .ForMember(dest => dest.SubcategoryName , o =>o.MapFrom(s=>s.Subcategory.Title))
+                .ForMember(dest => dest.CategoryName , o =>o.MapFrom(s=>s.category.Cat_Title))
                 .ReverseMap();
 
 
@@ -45,7 +46,7 @@ namespace Qate3Dashboard.MappingProfiles
 
             CreateMap<Category, CategoryDto>()
              .ForMember(dest => dest.Cat_ImageName, opt => opt.MapFrom<CategoryImageResolver>())
-
+             .ForMember(dest=>dest.Dept_Name , opt =>opt.MapFrom(c=>c.Department.Dept_Title))
                  .ReverseMap();
         }
 

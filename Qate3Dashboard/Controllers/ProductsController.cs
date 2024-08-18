@@ -95,8 +95,8 @@ namespace Qate3Dashboard.Controllers
 
         }
 
-
-        public async Task<IActionResult> Edit(int? id , string errorMessage)
+        [HttpGet]
+        public async Task<IActionResult> Edit(int? id , string errorMessage , int CatId , int SubCatId)
         {
             if (!id.HasValue) return BadRequest();
 
@@ -112,6 +112,9 @@ namespace Qate3Dashboard.Controllers
 
             ViewBag.Subcategories =await _unitOfWork.Repository<SubCategory>().GetAllAsync();
 
+            ViewBag.CatId = CatId;
+
+            ViewBag.SubCatId = SubCatId;
             return View(MappedProduct);
 
         }
@@ -128,18 +131,18 @@ namespace Qate3Dashboard.Controllers
             if (!ModelState.IsValid)
                 return View(productVM);
 
-            var Products = await _unitOfWork.Repository<Product>().GetAllAsync();
+            //var Products = await _unitOfWork.Repository<Product>().GetAllAsync();
 
-            foreach (var prod in Products)
-            {
-                if (productVM.Prod_Title == prod.Prod_Title)
-                {
+            //foreach (var prod in Products)
+            //{
+            //    if (productVM.Prod_Title == prod.Prod_Title)
+            //    {
 
 
-                    return RedirectToAction("Edit", routeValues: new { errorMessage = "this product is already exist" });
-                }
+            //        return RedirectToAction("Edit", routeValues: new { errorMessage = "this product is already exist" });
+            //    }
 
-            }
+            //}
 
             var OldProduct = await _unitOfWork.Repository<Product>().GetByIdAsync(id.Value);
 

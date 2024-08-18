@@ -104,18 +104,18 @@ namespace Qate3Dashboard.Controllers
             if (!ModelState.IsValid)
                 return View(departmentVM);
 
-            var departments = await _unitOfWork.Repository<Department>().GetAllAsync();
+            //var departments = await _unitOfWork.Repository<Department>().GetAllAsync();
 
-            foreach (var dept in departments)
-            {
-                if (departmentVM.Dept_Title == dept.Dept_Title)
-                {
+            //foreach (var dept in departments)
+            //{
+            //    if (departmentVM.Dept_Title == dept.Dept_Title)
+            //    {
 
 
-                    return RedirectToAction("CreateDepartment", routeValues: new { id = id ,errorMessage = "this Department is already exist" });
-                }
+            //        return RedirectToAction("CreateDepartment", routeValues: new { id = id ,errorMessage = "this Department is already exist" });
+            //    }
 
-            }
+            //}
 
 
 

@@ -102,7 +102,7 @@ namespace Qate3Dashboard.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> Edit(int? id, string? errorMessage)
+        public async Task<IActionResult> Edit(int? id, string? errorMessage , int DepartmentId)
         {
 
 
@@ -115,6 +115,8 @@ namespace Qate3Dashboard.Controllers
                 return NotFound();
 
             ViewBag.error = errorMessage;
+
+            ViewBag.DeptId = DepartmentId;
 
             ViewBag.departments =await _unitOfWork.Repository<Department>().GetAllAsync();
             //var dept = await _unitOfWork.Repository<Department>().GetByIdAsync(DepartmentId);
@@ -140,18 +142,18 @@ namespace Qate3Dashboard.Controllers
                 return View(categoryVM);
 
 
-            var categories = await _unitOfWork.Repository<Category>().GetAllAsync();
+            //var categories = await _unitOfWork.Repository<Category>().GetAllAsync();
 
-            foreach (var cat in categories)
-            {
-                if (categoryVM.Cat_Title == cat.Cat_Title)
-                {
+            //foreach (var cat in categories)
+            //{
+            //    if (categoryVM.Cat_Title == cat.Cat_Title)
+            //    {
 
 
-                    return RedirectToAction("CreateCategory", routeValues: new { errorMessage = "this category is already exist" });
-                }
+            //        return RedirectToAction("CreateCategory", routeValues: new { errorMessage = "this category is already exist" });
+            //    }
 
-            }
+            //}
 
 
 

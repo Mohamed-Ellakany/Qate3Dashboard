@@ -41,6 +41,10 @@ namespace Qate3BLL.Repositories
             {
               return (IEnumerable<T>)  await _dbContext.Categories.Include(c => c.Department).ToListAsync();
             }
+            else if(typeof(T) == typeof(Product))
+            {
+                return (IEnumerable<T>)await _dbContext.Products.Include(c => c.Subcategory).Include(c=>c.category).ToListAsync();
+            }
             else
             {
             return await _dbContext.Set<T>().AsNoTracking().ToListAsync();

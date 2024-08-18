@@ -17,7 +17,13 @@ namespace Qate3Dashboard.DTOs
 
         public int SubcategoryId { get; set; }
 
+        public string SubcategoryName { get; set; }
+
+
+
         public int categoryId { get; set; }
+
+        public string CategoryName { get; set; }
 
     }
 }

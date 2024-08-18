@@ -17,13 +17,13 @@ namespace Qate3Dashboard.Controllers
         }
 
         //Register 
-        
+        [Authorize]
         public  IActionResult Register()
         {
             return View();
         }
 
-        
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(SignUpViewModel model)

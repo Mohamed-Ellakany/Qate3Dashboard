@@ -45,7 +45,7 @@
 
                                     <h5 class="card-title appColor">@category.Cat_Title</h5>
 
-                                    <a asp-controller="Category" asp-action="Edit" asp-route-Id="@category.Id"  class="btn btn-warning text-white w-100 my-2">تعديل</a>
+                                    <a asp-controller="Category" asp-action="Edit" asp-route-Id="@category.Id" asp-route-DepartmentId="@ViewBag.DeptId" class="btn btn-warning text-white w-100 my-2">تعديل</a>
                                     <a asp-controller="Category" asp-action="Delete" asp-route-Id="@category.Id"  class="btn btn-danger text-white w-100 my-2">حذف</a>
                         </div>
                             </a>

@@ -48,7 +48,7 @@ namespace Qate3Dashboard.Controllers
 
 
             var Products = _unitOfWork.Repository<Product>().GetAllAsync().Result.Where(p => p.SubcategoryId == SubCategoryId && p.categoryId == CategoryId);
-
+       
 
             var mappedProducts = _mapper.Map<IEnumerable<Product>, IEnumerable<ProductDto>>(Products);
 
