@@ -17,6 +17,7 @@ The Boycott Dashboard for Mobile App is a powerful tool designed to help Manager
 - **User-friendly interface**: Easy to navigate and use.
 - **Can any one use it**: Ui Design is very esay and user journey is very good.
 - **Crud Operations**: All Of Crud Operations to Control Data in Database
+- **Api EndPoints**: EndPoints to make Flutter Project and Frontend project 
 
 ## Technologies
 
